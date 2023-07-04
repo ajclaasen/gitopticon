@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <h2>My first Apollo app 🚀</h2>
         <br/>
-        <RepositoriesList />
+        <RepositoriesList query="hello world" />
       </header>
     </div>
   );
