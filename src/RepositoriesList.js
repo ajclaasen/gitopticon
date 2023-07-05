@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from './queries';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Repository from './Repository';
+import RepositoryCard from './RepositoryCard';
 
-function RepositoriesList({ query }) {
+export default function RepositoriesList({ query }) {
   const { loading, error, fetchMore, data } = useQuery(GET_REPOSITORIES, {
     variables: { query, cursor: null },
   });
@@ -28,10 +28,8 @@ function RepositoriesList({ query }) {
     endMessage={<p>End of results</p>}
   >
     {data.search.nodes.map((node) => (
-      <Repository node={node} key={node.id} />
+      <RepositoryCard node={node} key={node.id} />
     ))}
   </InfiniteScroll>
     
 }
-
-export default RepositoriesList;
