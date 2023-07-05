@@ -1,8 +1,15 @@
 import { useMemo, useState } from 'react';
 import debounce from 'lodash.debounce';
-import RepositoriesList from './RepositoriesList'
+import RepositoriesList from './RepositoriesList';
 
 import './App.css';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
   const [query, setQuery] = useState('');
@@ -16,13 +23,16 @@ function App() {
   , []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Gitopticon 🕵️</h2>
-        <input placeholder={"Search repositories"} onChange={debouncedChangeHandler} />
-        {query && <RepositoriesList query={query} />}
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div className="App">
+        <header className="App-header">
+          <h2>Gitopticon 🕵️</h2>
+          <input placeholder={"Search repositories"} onChange={debouncedChangeHandler} />
+          {query && <RepositoriesList query={query} />}
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
