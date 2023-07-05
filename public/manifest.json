@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Gitopticon",
+  "name": "An application to search for and summarize GitHub repositories",
   "icons": [
     {
       "src": "favicon.ico",
