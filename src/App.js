@@ -20,7 +20,7 @@ function App() {
       <header className="App-header">
         <h2>Gitopticon 🕵️</h2>
         <input placeholder={"Search repositories"} onChange={debouncedChangeHandler} />
-        <RepositoriesList query={query} />
+        {query && <RepositoriesList query={query} />}
       </header>
     </div>
   );
