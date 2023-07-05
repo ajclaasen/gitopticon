@@ -1,7 +1,7 @@
-function Repository({ node: { id, name, description }}) {
+function Repository({ node: { id, name, description, url }}) {
   return (
     <div key={id}>
-      <h3>{name}</h3>
+      <h3><a href={url}>{name}</a></h3>
       <p>{description}</p>
       <br />
     </div>

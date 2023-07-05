@@ -9,6 +9,7 @@ const GET_REPOSITORIES = gql`
             id
             name
             description
+            url
           }
         }
       }
