@@ -10,9 +10,9 @@ function RepositoriesList({ query }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  return data.search.edges.map(({node}) => (
-    <Repository node={node} />
-  ));
+  return data.search.nodes.map((node) => (
+    <Repository node={node} key={node.id} />
+  ))
 }
 
 export default RepositoriesList;

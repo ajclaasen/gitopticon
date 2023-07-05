@@ -1,6 +1,6 @@
-function Repository({ node: { id, name, description, url }}) {
+function Repository({ node: { name, description, url }}) {
   return (
-    <div key={id}>
+    <div>
       <h3><a href={url}>{name}</a></h3>
       <p>{description}</p>
       <br />
@@ -8,4 +8,4 @@ function Repository({ node: { id, name, description, url }}) {
   )
 };
 
-export default Repository
+export default Repository;
