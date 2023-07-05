@@ -1,4 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
+import Repository from './Repository';
 
 const GET_REPOSITORIES = gql`
   query getRepositories($query: String!) {
@@ -24,12 +25,8 @@ function RepositoriesList({ query }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  return data.search.edges.map(({node: { id, name, description }}) => (
-    <div key={id}>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <br />
-    </div>
+  return data.search.edges.map(({node}) => (
+    <Repository node={node} />
   ));
 }
 
