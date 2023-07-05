@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import debounce from 'lodash.debounce';
 import RepositoriesList from './RepositoriesList';
+import SearchField from './SearchField';
 
 import './App.css';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
@@ -28,7 +29,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h2>Gitopticon 🕵️</h2>
-          <input placeholder={"Search repositories"} onChange={debouncedChangeHandler} />
+          <SearchField onChange={debouncedChangeHandler} />
           {query && <RepositoriesList query={query} />}
         </header>
       </div>
