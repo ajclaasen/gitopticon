@@ -27,8 +27,6 @@ function RepositoriesList({ query }) {
   return data.search.edges.map(({node: { id, name, description }}) => (
     <div key={id}>
       <h3>{name}</h3>
-      <br />
-      <b>About this repository:</b>
       <p>{description}</p>
       <br />
     </div>

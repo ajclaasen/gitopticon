@@ -18,10 +18,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>My first Apollo app 🚀</h2>
-        <br/>
-        <h5>Search!</h5>
-        <input placeholder={"Zoeken doe je hier"} onChange={debouncedChangeHandler} />
+        <h2>Gitopticon 🕵️</h2>
+        <input placeholder={"Search repositories"} onChange={debouncedChangeHandler} />
         <RepositoriesList query={query} />
       </header>
     </div>
