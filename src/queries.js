@@ -7,6 +7,14 @@ const GET_REPOSITORIES = gql`
         ... on Repository {
           id
           name
+          stargazerCount
+          forkCount
+          issues(filterBy: {states: OPEN}) {
+            totalCount
+          }
+          pullRequests(states: OPEN) {
+            totalCount
+          }
           description
           url
         }
