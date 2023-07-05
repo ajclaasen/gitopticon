@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const GET_REPOSITORIES = gql`
-  query getRepositories($query: String!) {
-    search(query: $query, type: REPOSITORY, first: 10) {
+  query getRepositories($query: String!, $cursor: String) {
+    search(query: $query, type: REPOSITORY, first: 10, after: $cursor) {
       nodes {
         ... on Repository {
           id
@@ -10,6 +10,10 @@ const GET_REPOSITORIES = gql`
           description
           url
         }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
       }
     }
   }
