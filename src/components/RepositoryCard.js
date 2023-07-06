@@ -22,10 +22,10 @@ export default function RepositoryCard({ node }) {
     <Card variant="outlined" sx={{ maxWidth: 345 }}>
       <CardActionArea href={url}>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" className="max-1-column">
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" className="max-3-columns">
             {description}
           </Typography>
         </CardContent>
