@@ -8,11 +8,11 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   const token = process.env.REACT_APP_GITHUB_API_KEY;
 
-  return { 
+  return {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",
-    }
+    },
   }
 })
 
@@ -27,20 +27,20 @@ export const client = new ApolloClient({
             keyArgs: ["query"],
 
             merge(existing = {}, incoming) {
-              if(!existing.nodes) return incoming;
+              if (!existing.nodes) return incoming;
 
               // We don't care for any part of the existing cache...
-              const mergedCache = {...incoming};
-              
+              const mergedCache = { ...incoming };
+
               // ...except for the nodes, which contain the repositories we've already loaded and shown
               const mergedNodes = [...existing.nodes, ...incoming.nodes];
               mergedCache.nodes = mergedNodes;
 
               return mergedCache;
             },
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   }),
 });

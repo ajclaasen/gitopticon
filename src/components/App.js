@@ -21,7 +21,7 @@ function App() {
 
   const debouncedChangeHandler = useMemo(
     () => debounce(changeHandler, 300)
-  , []);
+    , []);
 
   return (
     <ThemeProvider theme={darkTheme}>

@@ -1,8 +1,8 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 export default function CardListItem({ IconComponent, count, text, href }) {
-  const compactCount = count && 
-    Intl.NumberFormat('en-US', { notation: "compact", maximumFractionDigits: 1})
+  const compactCount = count &&
+    Intl.NumberFormat('en-US', { notation: "compact", maximumFractionDigits: 1 })
       .format(count)
       .toLowerCase();
 

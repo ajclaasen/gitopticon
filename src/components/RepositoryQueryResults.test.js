@@ -34,10 +34,10 @@ const mocks = [
             endCursor: 'hello-1',
             hasNextPage: false,
           },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 ]
 
 test('renders a repository title', async () => {
@@ -50,6 +50,6 @@ test('renders a repository title', async () => {
   );
 
   const titleElement = await screen.findByText(/hello world/i);
-  
+
   expect(titleElement).toBeInTheDocument();
 });
