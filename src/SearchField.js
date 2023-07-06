@@ -3,7 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchField({ onChange }) {
   return (
-    <TextField 
+    <TextField
+      sx={{mb: 2}}
       id="search-field" 
       label="Search repositories" 
       variant="outlined"

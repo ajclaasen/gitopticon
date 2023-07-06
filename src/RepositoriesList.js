@@ -26,7 +26,7 @@ export default function RepositoriesList({ query }) {
       dataLength={data.search.nodes.length}
       next={fetchMoreData}
       hasMore={data.search.pageInfo.hasNextPage}
-      loader={<CircularProgress />}
+      loader={<CircularProgress sx={{m: 2}} />}
       endMessage={<p>End of results</p>}
     >
       <Stack spacing={2}>
