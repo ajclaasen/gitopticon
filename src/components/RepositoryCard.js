@@ -1,5 +1,5 @@
 import { Card, CardActionArea, CardActions, CardContent, List, Typography } from '@mui/material';
-import { StarIcon, RepoForkedIcon, IssueOpenedIcon, GitPullRequestIcon } from '@primer/octicons-react';
+import { StarIcon, RepoForkedIcon, IssueOpenedIcon, GitPullRequestIcon, LawIcon } from '@primer/octicons-react';
 
 import CardListItem from './CardListItem';
 
@@ -10,6 +10,7 @@ export default function RepositoryCard({ node }) {
     url,
     stargazerCount,
     forkCount,
+    licenseInfo,
     issues: {
       totalCount: issuesCount,
     },
@@ -32,6 +33,7 @@ export default function RepositoryCard({ node }) {
       </CardActionArea>
       <CardActions disableSpacing>
         <List style={{ width: '100%' }} disablePadding>
+          {!!licenseInfo && <CardListItem IconComponent={LawIcon} text={licenseInfo.name} href={licenseInfo.url} />}
           <CardListItem IconComponent={StarIcon} count={stargazerCount} text="stars" href={`${url}/stargazers`} />
           <CardListItem IconComponent={RepoForkedIcon} count={forkCount} text="forks" href={`${url}/forks`} />
           <CardListItem IconComponent={IssueOpenedIcon} count={issuesCount} text="open issues" href={`${url}/issues`} />
