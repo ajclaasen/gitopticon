@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import debounce from 'lodash.debounce';
-import RepositoriesList from './RepositoriesList';
+import RepositoryQueryResults from './RepositoryQueryResults';
 import SearchField from './SearchField';
 
 import './App.css';
@@ -31,7 +31,7 @@ function App() {
           <h2>Gitopticon 🕵️</h2>
           <SearchField onChange={debouncedChangeHandler} />
         </header>
-        {query && <RepositoriesList query={query} />}
+        {query && <RepositoryQueryResults query={query} />}
       </div>
     </ThemeProvider>
   );

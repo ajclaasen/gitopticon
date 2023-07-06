@@ -4,7 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import RepositoryCard from './RepositoryCard';
 import { CircularProgress, Stack } from '@mui/material';
 
-export default function RepositoriesList({ query }) {
+export default function RepositoryQueryResults({ query }) {
   const { loading, error, fetchMore, data } = useQuery(GET_REPOSITORIES, {
     variables: { query, cursor: null },
   });
