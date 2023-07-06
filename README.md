@@ -31,7 +31,7 @@ For this, we will be inserting a personal access token into the local environmen
 * Generate a fine-grained personal access token using GitHub's official instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
 This application only needs read-only access to public repositories. It needs no specific permissions, so the default configuration should be fine.
 
-* Copy the generated access token into the `.env` file under the key `REACT_APP_GITHUB_API_KEY`:
+* Copy the generated access token into a new `.env` file in the root directory of this project under the key `REACT_APP_GITHUB_API_KEY`:
 ```.env
 REACT_APP_GITHUB_API_KEY=<your key here, starts with github_pat>
 ```
