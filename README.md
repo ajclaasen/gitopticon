@@ -10,6 +10,7 @@ All source code is available under the GNU General Public License. See [LICENSE]
 
 * Node.js
 * Yarn
+* Access to a GitHub account
 
 ## Setup
 
