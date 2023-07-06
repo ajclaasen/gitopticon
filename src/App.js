@@ -27,11 +27,11 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div className="App">
-        <header className="App-header">
+        <header>
           <h2>Gitopticon 🕵️</h2>
           <SearchField onChange={debouncedChangeHandler} />
-          {query && <RepositoriesList query={query} />}
         </header>
+        {query && <RepositoriesList query={query} />}
       </div>
     </ThemeProvider>
   );
