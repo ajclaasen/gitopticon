@@ -29,7 +29,7 @@ export default function RepositoryQueryResults({ query }) {
       loader={<CircularProgress sx={{m: 2}} />}
       endMessage={<p>End of results</p>}
     >
-      <Stack spacing={2}>
+      <Stack spacing={2} sx={{minWidth: { xs: '100vw', sm: 600 }}} >
         {data.search.nodes.map((node) => (
           <RepositoryCard node={node} key={node.id} />
         ))}
