@@ -19,7 +19,7 @@ export default function RepositoryCard({ node }) {
   } = node;
 
   return (
-    <Card variant="outlined" sx={{ maxWidth: 345 }}>
+    <Card variant="outlined" sx={{ maxWidth: 690 }}>
       <CardActionArea href={url}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" className="max-1-column">
@@ -31,7 +31,7 @@ export default function RepositoryCard({ node }) {
         </CardContent>
       </CardActionArea>
       <CardActions disableSpacing>
-        <List style={{ width: '100%' }}>
+        <List style={{ width: '100%' }} disablePadding>
           <CardListItem IconComponent={StarIcon} count={stargazerCount} text="stars" href={`${url}/stargazers`} />
           <CardListItem IconComponent={RepoForkedIcon} count={forkCount} text="forks" href={`${url}/forks`} />
           <CardListItem IconComponent={IssueOpenedIcon} count={issuesCount} text="open issues" href={`${url}/issues`} />
