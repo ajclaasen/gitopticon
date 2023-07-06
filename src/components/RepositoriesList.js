@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_REPOSITORIES } from './queries';
+import { GET_REPOSITORIES } from '../queries';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import RepositoryCard from './RepositoryCard';
 import { CircularProgress, Stack } from '@mui/material';
